@@ -6,8 +6,7 @@
 
 ## Context
 
-This is the second step of the `crospeleo-name-origin-ml` project at:
-`C:\Users\Lovel.IZRK-LK-NB\Programming\crospeleo-name-origin-ml`
+This is the second step of the `crospeleo-name-origin-ml` p
 
 In Prompt 1 we created:
 - `data/processed/dataset_clean.csv` — cleaned dataset (~5967 rows with non-null labels)

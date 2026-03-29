@@ -1,0 +1,74 @@
+EVALUATION REPORT
+============================================================
+Best model: LogisticRegression / C_combined
+Test samples: 1194
+
+CLASSIFICATION REPORT
+============================================================
+                            precision    recall  f1-score   support
+
+      nepoznato podrijetlo     0.1600    0.2105    0.1818        19
+    preuzeto iz literature     0.2188    0.4118    0.2857        34
+preuzeto kao lokalni naziv     0.5668    0.6181    0.5913       254
+         preuzeto sa karte     0.2188    0.3684    0.2745        19
+            smišljeno novo     0.8398    0.7362    0.7846       527
+  smišljeno prema toponimu     0.7066    0.6921    0.6993       341
+
+                  accuracy                         0.6750      1194
+                 macro avg     0.4518    0.5062    0.4695      1194
+              weighted avg     0.7053    0.6750    0.6872      1194
+
+
+CONFUSION MATRIX
+                                    nepoznato preuzeto ipreuzeto kpreuzeto ssmišljeno smišljeno 
+               nepoznato podrijetlo          4         3         5         0         4         3
+             preuzeto iz literature          0        14         6         1         6         7
+         preuzeto kao lokalni naziv          4        17       157        15        24        37
+                  preuzeto sa karte          0         3         5         7         3         1
+                     smišljeno novo         10        11        62         6       388        50
+           smišljeno prema toponimu          7        16        42         3        37       236
+
+PER-CLASS TOP-K ACCURACY
+  nepoznato podrijetlo                 n=  19  top-1=0.211  top-2=0.316  top-3=0.579
+  preuzeto iz literature               n=  34  top-1=0.412  top-2=0.559  top-3=0.706
+  preuzeto kao lokalni naziv           n= 254  top-1=0.618  top-2=0.882  top-3=0.961
+  preuzeto sa karte                    n=  19  top-1=0.368  top-2=0.526  top-3=0.632
+  smišljeno novo                       n= 527  top-1=0.736  top-2=0.882  top-3=0.949
+  smišljeno prema toponimu             n= 341  top-1=0.692  top-2=0.833  top-3=0.924
+
+  Overall  top-1=0.6750  top-2=0.8442  top-3=0.9263
+
+  Top confused pairs:
+    smišljeno novo  ->  preuzeto kao lokalni naziv: 62
+    smišljeno novo  ->  smišljeno prema toponimu: 50
+    smišljeno prema toponimu  ->  preuzeto kao lokalni naziv: 42
+    smišljeno prema toponimu  ->  smišljeno novo: 37
+    preuzeto kao lokalni naziv  ->  smišljeno prema toponimu: 37
+    preuzeto kao lokalni naziv  ->  smišljeno novo: 24
+
+CONFIDENCE ANALYSIS
+Mean confidence (correct):   0.6678
+Mean confidence (incorrect): 0.4994
+Suggested threshold for human review flag: 0.65
+
+ERROR ANALYSIS (388 total errors — 20 shown, minority classes first)
+  [01] 'Podrum'  |  true=preuzeto iz literature  |  pred=smišljeno novo  |  top3: smišljeno novo (0.36)  |  smišljeno prema toponimu (0.24)  |  preuzeto kao lokalni naziv (0.21)
+  [02] 'Jamošpilja iza Puplja'  |  true=preuzeto iz literature  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.32)  |  preuzeto sa karte (0.27)  |  smišljeno novo (0.16)
+  [03] 'Jama u ogradi'  |  true=preuzeto iz literature  |  pred=smišljeno prema toponimu  |  top3: smišljeno prema toponimu (0.43)  |  preuzeto kao lokalni naziv (0.19)  |  smišljeno novo (0.18)
+  [04] 'Jama kod Kresa'  |  true=nepoznato podrijetlo  |  pred=smišljeno prema toponimu  |  top3: smišljeno prema toponimu (0.24)  |  nepoznato podrijetlo (0.22)  |  preuzeto kao lokalni naziv (0.22)
+  [05] 'Propadna jama'  |  true=nepoznato podrijetlo  |  pred=smišljeno novo  |  top3: smišljeno novo (0.51)  |  preuzeto kao lokalni naziv (0.30)  |  nepoznato podrijetlo (0.08)
+  [06] 'Jama pod Barišinovcem'  |  true=preuzeto iz literature  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.39)  |  smišljeno prema toponimu (0.39)  |  preuzeto iz literature (0.09)
+  [07] 'Jadrića jama'  |  true=nepoznato podrijetlo  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.53)  |  smišljeno novo (0.19)  |  smišljeno prema toponimu (0.13)
+  [08] 'Ledenica'  |  true=nepoznato podrijetlo  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.64)  |  preuzeto sa karte (0.17)  |  preuzeto iz literature (0.12)
+  [09] 'Jama na Vlaki'  |  true=preuzeto iz literature  |  pred=smišljeno prema toponimu  |  top3: smišljeno prema toponimu (0.40)  |  preuzeto iz literature (0.31)  |  nepoznato podrijetlo (0.13)
+  [10] 'Poljanska jama'  |  true=preuzeto sa karte  |  pred=smišljeno novo  |  top3: smišljeno novo (0.46)  |  smišljeno prema toponimu (0.20)  |  preuzeto iz literature (0.13)
+  [11] 'Rupine'  |  true=preuzeto sa karte  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.40)  |  smišljeno novo (0.28)  |  preuzeto iz literature (0.15)
+  [12] 'Stara škola'  |  true=preuzeto iz literature  |  pred=smišljeno novo  |  top3: smišljeno novo (0.45)  |  nepoznato podrijetlo (0.29)  |  preuzeto kao lokalni naziv (0.20)
+  [13] 'Zala'  |  true=nepoznato podrijetlo  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.45)  |  preuzeto iz literature (0.25)  |  nepoznato podrijetlo (0.12)
+  [14] 'Mali Rumin'  |  true=preuzeto sa karte  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.60)  |  smišljeno prema toponimu (0.19)  |  preuzeto iz literature (0.09)
+  [15] 'Mišinova jama'  |  true=preuzeto iz literature  |  pred=smišljeno novo  |  top3: smišljeno novo (0.37)  |  preuzeto kao lokalni naziv (0.28)  |  preuzeto iz literature (0.24)
+  [16] 'Glogova jama'  |  true=nepoznato podrijetlo  |  pred=smišljeno novo  |  top3: smišljeno novo (0.71)  |  preuzeto kao lokalni naziv (0.24)  |  smišljeno prema toponimu (0.02)
+  [17] 'Jama kod dva lješnjaka'  |  true=nepoznato podrijetlo  |  pred=preuzeto kao lokalni naziv  |  top3: preuzeto kao lokalni naziv (0.29)  |  smišljeno prema toponimu (0.27)  |  preuzeto iz literature (0.17)
+  [18] 'Ledenica u Tijesnom kod Vrata'  |  true=nepoznato podrijetlo  |  pred=smišljeno prema toponimu  |  top3: smišljeno prema toponimu (0.48)  |  smišljeno novo (0.32)  |  preuzeto iz literature (0.08)
+  [19] 'Špilja u suhoj dolini'  |  true=preuzeto iz literature  |  pred=smišljeno prema toponimu  |  top3: smišljeno prema toponimu (0.38)  |  preuzeto iz literature (0.28)  |  nepoznato podrijetlo (0.16)
+  [20] 'Pećina u usjeku'  |  true=nepoznato podrijetlo  |  pred=preuzeto iz literature  |  top3: preuzeto iz literature (0.26)  |  smišljeno prema toponimu (0.20)  |  nepoznato podrijetlo (0.19)

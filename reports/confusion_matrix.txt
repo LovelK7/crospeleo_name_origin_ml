@@ -1,0 +1,9 @@
+CONFUSION MATRIX
+
+                                    nepoznato preuzeto ipreuzeto kpreuzeto ssmišljeno smišljeno 
+               nepoznato podrijetlo          4         3         5         0         4         3
+             preuzeto iz literature          0        14         6         1         6         7
+         preuzeto kao lokalni naziv          4        17       157        15        24        37
+                  preuzeto sa karte          0         3         5         7         3         1
+                     smišljeno novo         10        11        62         6       388        50
+           smišljeno prema toponimu          7        16        42         3        37       236
