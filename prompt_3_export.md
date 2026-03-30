@@ -7,7 +7,7 @@
 ## Context
 
 This is the third and final step of the `crospeleo-name-origin-ml` project at:
-`C:\Users\Lovel.IZRK-LK-NB\Programming\crospeleo-name-origin-ml`
+crospeleo-name-origin-ml
 
 In previous steps we:
 1. Prepared data and engineered features (`data_loader.py`, `feature_engineering.py`)
